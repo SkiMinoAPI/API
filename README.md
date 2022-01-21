@@ -1,5 +1,5 @@
 # SkiMino API
-  <img src="https://img.shields.io/github/license/XMSMApi/SkiMino?style=for-the-badge" /><img src="https://img.shields.io/github/languages/code-size/XMSMApi/SkiMino?style=for-the-badge" /><br />
+  <img src="https://img.shields.io/github/license/SkiMinoTeam/API?style=for-the-badge" /><img src="https://img.shields.io/github/languages/code-size/SkiMinoTeam/API?style=for-the-badge" /><br />
 🆗SkiMino API is a free, open source API, using the GPLv3 protocol.  
 [Docs](https://docs.skimino.cf/API)  
 [SkiMino API Official website](https://api.skimino.cf)
