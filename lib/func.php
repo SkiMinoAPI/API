@@ -54,6 +54,7 @@ function json_code($arr = '', $code, $errmsg = false) {
 			"data" => $arr
 		);
 	}
+	http_response_code($code);
 	return json_encode($json, JSON_UNESCAPED_UNICODE);
 }
 
