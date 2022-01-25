@@ -16,7 +16,7 @@ if ($qgc != null) {
 		$json = array(
 			"qqgcode" => $qgc,
 			"size" => $size,
-			"avatar" => "https://p.qlogo.cn/gh/{$qgc}/{$qgc}/{$size}"
+			"url" => "https://p.qlogo.cn/gh/{$qgc}/{$qgc}/{$size}"
 		);
 		echo json_code($json, 200);
 	} else {
