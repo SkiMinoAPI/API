@@ -1,0 +1,5 @@
+<?php
+$data=array(
+    'cookie'=>"_uuid=86514C16-F3106-A68C-FD5E-7E35842D872E77767infoc; buvid3=83F86E47-B8B8-453A-A15D-A2D46FE0FC28148826infoc; b_nut=1641691879; buvid_fp_plain=undefined; SESSDATA=ee4fc98b%2C1658299487%2C49f9b%2A11; bili_jct=1371a2f7f10e3b8a5947db8b4cbfb37c; DedeUserID=372657168; DedeUserID__ckMd5=3f0f99b051a75a48; sid=9b0n8pba; CURRENT_BLACKGAP=0; blackside_state=0; rpdid=|(um~Rm~~|)u0J'uYRk~R~YJ); LIVE_BUVID=AUTO9716427478340661; Hm_lvt_8a6e55dbd2870f0f5bc9194cddf32a02=1642747837; i-wanna-go-back=-1; b_ut=5; CURRENT_FNVAL=2000; bp_video_offset_372657168=618426508392816000; fingerprint3=66b4ed0150cc76af814a50905f13be7b; fingerprint=b710415a76d246df7e9d1113addf58ef; PVID=1; buvid4=8DD1A18E-8793-EC66-A5D0-2818CB35758F85357-022012415-3suQnVxxxAU31bcuMW1u1Q%3D%3D; buvid_fp=b710415a76d246df7e9d1113addf58ef; innersign=0; b_lsid=BCEDCE8B_17E9063576E"
+);
+?>
