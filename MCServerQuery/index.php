@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * By SkiMkino
  * GitHub: https://github.com/XMSMApi
  * License: GPLv3
@@ -8,9 +8,6 @@ include '../lib/func.php';
 
 $host = $_GET['host'];
 $port = $_GET['port'];
-$name = $_GET['sn'];
-$theme = $_GET['theme'];
-$fon = $_GET['font'];
 $font = str_replace(':enand:', '&', $fon);
 
 require_once 'ApiQuery.php';
@@ -18,75 +15,7 @@ require_once 'ApiPing.php';
 
 require_once 'closeTags.php';
 
-if (isset($_GET['image'])) {
-    header("Content-type: image/JPEG");
-    if (isset($theme)) {
-        if ($theme == 'light') {
-            $im = imagecreatefromjpeg('./theme/light.jpg');
-            $color = ImageColorAllocate($im, 255,255,153);
-        } elseif ($theme == 'dark') {
-            $im = imagecreatefromjpeg('./theme/dark.jpg');
-            $color = ImageColorAllocate($im, 127,255,170);
-        } else {
-            $im = imagecreatefromjpeg('./theme/defult.jpg');
-            $color = ImageColorAllocate($im, 0,204,255);
-        }
-    } else {
-        $im = imagecreatefromjpeg('./theme/defult.jpg');
-        $color = ImageColorAllocate($im, 0,204,255);
-    }
-    
-    //定义字体
-    if ($font == null) {
-        $font = 'defult.ttf';
-    }
-    
-    //定义颜色&字体
-    $black = ImageColorAllocate($im, 0,0,0);
-    $pink = ImageColorAllocate($im, 255,119,201);
-    
-    //Ping
-    require_once 'ApiQuery.php';
-    require_once 'ApiPing.php';
-    
-    //读取Info
-    require_once 'closeTags.php';
-    
-    $players = $InfoPing['players']['online'].'/'.$InfoPing['players']['max'];
-    $version = explode(" ", $InfoPing['version']['name'], 2);
-    
-    //判定是否在线
-    if ($InfoPing !== false) {
-    
-        /*
-        在线
-        输出
-        */
-        $Ping = $Timer * 1000;
-        imagettftext($im, 20, 0, 12, 40, $color, $font, $name);
-        imagettftext($im, 20, 0, 12, 72, $color, $font, ' Host:'.$host);
-        imagettftext($im, 20, 0, 12, 104, $color, $font,' Port:'.$port);
-        imagettftext($im, 20, 0, 12, 147, $color, $font,' Players:'.$players);
-        imagettftext($im, 20, 0, 12, 185, $pink, $font,' Version:'.$version[1]);
-        imagettftext($im, 20, 0, 12, 210, $pink, $font, ' Ping:'.$Ping.'ms');
-        imagettftext($im, 20, 0, 12, 250, $pink, $font, ' Powered By SkiMino');
-        ImageGif($im);
-        ImageDestroy($im);
-        } else {
-        
-        /*
-        离线&不存在
-        输出
-        */
-        imagettftext($im, 20, 0, 12, 40, $color, $font, $name);
-        imagettftext($im, 20, 0, 12, 72, $color, $font, ' Host:'.$host);
-        imagettftext($im, 20, 0, 12, 104, $color, $font,' Port:'.$port);
-        imagettftext($im, 20, 0, 12, 210, $pink, $font,' Offline/Not such Host');
-        imagettftext($im, 20, 0, 12, 250, $pink, $font, ' Powered By SkiMino');
-        ImageGif($im);
-        ImageDestroy($im);
-        }
-} else {
+if ($host != null) {
     if (($Info = $Query->GetInfo()) !== false) {
 
         if ($Info['GameName'] == 'MINECRAFT') {
@@ -108,10 +37,10 @@ if (isset($_GET['image'])) {
         }
     
         $json = array(
-            'status' => 'Yes',
+            'status' => 'Online',
             'platform' => $platform,
             'gametype' => $Info['GameType'],
-            'icon' => $Info['favicon'],
+            'icon' => str_replace("\n", "", $Info['favicon']),
             'motd' => array(
                 'ingame' => $Info['HostName']
             ),
@@ -157,11 +86,13 @@ if (isset($_GET['image'])) {
         );
     } else {
         $json = array(
-            'status' => 'No',
+            'status' => 'Offline',
             'host' => $host,
             'port' => $port
         );
     }
     echo json_code($json, 200);
+} else {
+    echo json_code('', 500, 'No set host');
 }
 ?>

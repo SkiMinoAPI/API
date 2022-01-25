@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * By SkiMkino
  * GitHub: https://github.com/XMSMApi
  * License: GPLv3

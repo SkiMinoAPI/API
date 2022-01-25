@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * By SkiMkino
  * GitHub: https://github.com/XMSMApi
  * License: GPLv3
@@ -9,7 +9,7 @@ include '../lib/func.php';
 $name = $_GET['name'];
 if ($name != '') {
     header('Content-Type: image/svg+xml');
-    $data = json_decode(curl('https://api.github.com/users/' . $name . '?client_id='));
+    $data = json_decode(curl('https://api.github.com/users/' . $name . '?client_id=981bfe3c46b4bd37198d3a6af249ad03a7d5952a'));
     $bg = '#'.$_GET['bg_color'];
     if ($bg == '#') {
         $bg = 'white';

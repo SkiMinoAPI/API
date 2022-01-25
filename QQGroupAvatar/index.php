@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * By SkiMkino
  * GitHub: https://github.com/XMSMApi
  * License: GPLv3
@@ -16,7 +16,7 @@ if ($qgc != null) {
 		$json = array(
 			"qqgcode" => $qgc,
 			"size" => $size,
-			"url" => "https://p.qlogo.cn/gh/{$qgc}/{$qgc}/{$size}"
+			"avatar" => "https://p.qlogo.cn/gh/{$qgc}/{$qgc}/{$size}"
 		);
 		echo json_code($json, 200);
 	} else {

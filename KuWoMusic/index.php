@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * By SkiMkino
  * GitHub: https://github.com/XMSMApi
  * License: GPLv3
@@ -18,6 +18,6 @@ if ($id != '') {
 	echo json_code($json, 200);
 } else {
     echo json_code('', 500, 'No set id');
-    exit();
+    exit;
 }
 ?>
