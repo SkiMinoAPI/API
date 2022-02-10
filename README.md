@@ -5,6 +5,8 @@
 [SkiMino API Official website](https://api.smcloli.ml/)
 - ❌It is forbidden to abuse the API of this site, otherwise we will block the abuse of IP requests
 
+![Alt](https://repobeats.axiom.co/api/embed/0ce49dfa0efe6af30500ef33a1a090de4c93eb05.svg "Repobeats analytics image")
+
 SkiMino will work to create more open source API, but for some reasons we cannot open source some API.  
 If the SkiMino API is helpful to you, please give us a Star.
 
