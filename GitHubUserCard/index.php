@@ -84,7 +84,7 @@ if ($name != '') {
                  y="0"
                  height="120"
                  width="120"
-                 xlink:href="'.base64_encode(file_get_contents($data->avatar_url)).'"
+                 xlink:href="data:image/png;base64,'.base64_encode(file_get_contents($data->avatar_url)).'"
                  clip-path="url(#clip)"
                 />
             </g>
