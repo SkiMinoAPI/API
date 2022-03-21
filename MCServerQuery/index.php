@@ -40,7 +40,7 @@ if ($host != null) {
             'status' => 'Online',
             'platform' => $platform,
             'gametype' => $Info['GameType'],
-            'icon' => str_replace("\n", "", $Info['favicon']),
+            //'icon' => str_replace("\n", "", $Info['favicon']),
             'motd' => array(
                 'ingame' => $Info['HostName']
             ),
