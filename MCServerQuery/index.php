@@ -66,7 +66,7 @@ if ($host != null) {
         );
     } else if ($InfoPing !== false) {
         $json = array(
-            'icon' => $InfoPing['favicon'],
+            //'icon' => $InfoPing['favicon'],
             'motd' => $InfoPing['description'],
             'server' => array(
                 'host' => $host,
